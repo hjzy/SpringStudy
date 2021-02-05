@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="dog" class="cn.yifansun.pojo.Dog"/>
+    <bean id="dog1" class="cn.yifansun.pojo.Dog"/>
+    <bean id="cat" class="cn.yifansun.pojo.Cat"/>
+    <bean id="cat2" class="cn.yifansun.pojo.Cat"/>
+    <bean id="people" class="cn.yifansun.pojo.People"/>
+<!--    开启注解支持-->
+    <context:annotation-config/>
+
+</beans>

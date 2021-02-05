@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean就是java对象 , 由Spring创建和管理-->
+    <!--    这个标签就相当于new一个hello-->
+    <!--    id = 变量名-->
+    <!--    class = new哪一个对象-->
+    <!--    property 相当于给对象中的属性设置一个值-->
+
+
+    <!--P(属性: properties)命名空间 , 属性依然要设置set方法-->
+    <bean id="user" class="cn.yifansun.pojo.User" p:name="狂神" p:age="18"/>
+    <!--C(构造: Constructor)命名空间 , 属性依然要设置set方法-->
+    <bean id="user2" class="cn.yifansun.pojo.User" c:name="狂神" c:age="18" scope="prototype"/>
+
+</beans>

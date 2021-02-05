@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean就是java对象 , 由Spring创建和管理-->
+<!--    这个标签就相当于new一个hello-->
+<!--    id = 变量名-->
+<!--    class = new哪一个对象-->
+<!--    property 相当于给对象中的属性设置一个值-->
+    <bean id="hello" class="cn.yifansun.pojo.Hello">
+<!--        给参数赋值-->
+        <property name="str" value="Spring"/>
+    </bean>
+
+</beans>
