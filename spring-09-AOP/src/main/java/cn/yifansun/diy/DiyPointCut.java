@@ -1,0 +1,16 @@
+package cn.yifansun.diy;
+
+/**
+ * @author:yifan->2540584259@qq.com
+ * @date:2021/2/14,20:46
+ */
+public class DiyPointCut {
+    public void before() {
+        System.out.println("========方法执行前============");
+    }
+
+    public void after() {
+        System.out.println("========方法执行后============");
+    }
+
+}

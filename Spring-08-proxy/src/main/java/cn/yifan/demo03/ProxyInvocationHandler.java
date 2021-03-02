@@ -41,8 +41,7 @@ public class ProxyInvocationHandler implements InvocationHandler {
 
         log(method.getName());
         //动态代理的本质，就是使用反射机制实现
-        Object result = method.invoke(target, args);
-        return result;
+        return method.invoke(target, args);
     }
 
     public void log(String msg){

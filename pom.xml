@@ -18,6 +18,7 @@
         <module>Spring-07-AppConfig</module>
         <module>Spring-08-proxy</module>
         <module>spring-09-AOP</module>
+        <module>Spring-10-Mybatis</module>
     </modules>
 
     <properties>

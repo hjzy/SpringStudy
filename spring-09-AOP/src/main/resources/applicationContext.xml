@@ -10,22 +10,45 @@
 
     <!--    注册bean-->
     <bean id="userService" class="cn.yifansun.service.UserServiceImpl"/>
+    <!--实现了原生Spring Api接口中的MethodBeforeAdvice-->
     <bean id="log" class="cn.yifansun.log.Log"/>
+    <!--实现了原生Spring Api接口中的MethodAfterAdvice-->
     <bean id="afterLog" class="cn.yifansun.log.AfterLog"/>
 
-    <!--方式一：使用原生Spring API接口-->
-    <!--配置aop：需要导入aop的约束-->
-    <aop:config>
-        <!--切入点 expression： execution(要执行的位置)
-        *[public] *[返回值] *[类名] *[方法名] *[参数]-->
-        <aop:pointcut id="pointcut" expression="execution(* cn.yifansun.service.UserServiceImpl.*(..))"/>
+    <!--
+            &lt;!&ndash;方式一：使用原生Spring API接口&ndash;&gt;
+            &lt;!&ndash;配置aop：需要导入aop的约束&ndash;&gt;
+            <aop:config>
+                &lt;!&ndash;切入点 expression： execution(要执行的位置)
+                *[public] *[返回值] *[类名] *[方法名] *[参数]&ndash;&gt;
+                <aop:pointcut id="pointcut" expression="execution(* cn.yifansun.service.UserServiceImpl.*(..))"/>
 
-        <!--执行环绕-->
-        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
-        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+                &lt;!&ndash;执行环绕&ndash;&gt;
+                <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
+                <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
 
-    </aop:config>
-    <!--    开启注解支持-->
+            </aop:config>
+    -->
+
+    <!--    &lt;!&ndash;方式二、自定义类来实现AOP&ndash;&gt;-->
+    <!--    <bean id="diy" class="cn.yifansun.diy.DiyPointCut"/>-->
+    <!--    <aop:config>-->
+    <!--        &lt;!&ndash;自定义切面， ref 要引用的类&ndash;&gt;-->
+    <!--        <aop:aspect ref="diy">-->
+    <!--            &lt;!&ndash;切入点&ndash;&gt;-->
+    <!--            <aop:pointcut id="pointcut" expression="execution(* cn.yifansun.service.UserServiceImpl.*(..))"/>-->
+    <!--            &lt;!&ndash;通知&ndash;&gt;-->
+    <!--            <aop:before method="before" pointcut-ref="pointcut"/>-->
+    <!--            <aop:after method="after" pointcut-ref="pointcut"/>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
+
+    <!--方式三、注解实现-->
+    <!--此处的bean仅仅是注册该类到Spring容器中-->
+    <bean id="annotationPointCut" class="cn.yifansun.diy.AnnotationPointCut"/>
+    <!--开启注解支持-->
+    <aop:aspectj-autoproxy/>
+    <!--启用注解支持-->
     <context:annotation-config/>
 
 </beans>
