@@ -13,6 +13,7 @@
         <module name="Spring-01-IOC1" />
         <module name="Spring-02-hellospring" />
         <module name="Spring-10-Mybatis" />
+        <module name="Spring-11-Transaction" />
         <module name="Spring-04-DI" />
         <module name="spring-09-AOP" />
         <module name="Spring-07-AppConfig" />
